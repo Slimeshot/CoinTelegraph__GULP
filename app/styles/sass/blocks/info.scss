@@ -1,0 +1,110 @@
+.info {
+    padding: 80px 0;
+    @media (max-width: 540px) {
+        padding: 64px 0;
+    }
+}
+.info__content {
+}
+.info__title {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    color: #1A1A18;
+    margin-bottom: 64px;
+    &-yellow {
+        color: #FABF2B;
+    }
+    @media (max-width: 1024px) {
+        width: 50%;
+    }
+    @media (max-width: 540px) {
+        margin-bottom: 24px;
+        font-size: 24px;
+        line-height: 32px;
+        width: 100%;
+    }
+}
+
+.info__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    @media (max-width: 1024px) {
+        &:first-child {
+            margin-bottom: 40px;
+        }
+    }
+    @media (max-width: 540px) {
+        flex-direction: column;
+        &:first-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+.info__item-tablet {
+    display: none;
+    @media (max-width: 1024px) {
+        display: block;
+    }
+    @media (max-width: 540px) {
+        display: none;
+    }
+}
+.info__item-desktop {
+    @media (max-width: 1024px) {
+        display: none;
+    }
+    @media (max-width: 540px) {
+        display: block;
+    }
+}
+.info__item {
+    width: 33%;
+    padding: 0 32px;
+    border-right: 1px solid #EBEBEB;
+    &:last-child {
+        border-right: none;
+    }
+    @media (max-width: 1024px) {
+        width: 50%;
+        border-right: none;
+        padding: 0 16px;
+    }
+    @media (max-width: 540px) {
+        width: 100%;
+        border-right: none;
+        padding: 24px 0;
+        border-top: 1px solid #EBEBEB;
+        &:last-child {
+            border-bottom: 1px solid #EBEBEB;
+        }
+    }
+
+}
+.info__item-img {
+    margin-bottom: 24px;
+    img {
+        // max-width: ;
+    }
+}
+.info__item-title {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #070A0B;
+    margin-bottom: 16px;
+}
+.info__item-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #243037;
+    height: 100%;
+}
