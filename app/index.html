@@ -1,21 +1,20 @@
 <!--#set var="title" value="CT" -->
 <!--#include virtual="/parts/header.html" -->
 
-
 <section class="intro">
 	<div class="container">
 		<div class="intro__content">
 			<div class="intro__info">
-				<h1 class="intro__title">CoinTelegraph Springboard</h1>
+				<h1 class="intro__title">Cointelegraph Springboard</h1>
 				<p class="intro__subtitle">Introduce your visionary project to the crypto-native audience 
 					of Cointelegraph through promoted content, and pay with a share of project’s tokens or NFTs. Preserve your cash resources for core project development instead of spending them on marketing.</p>
 				<div class="intro__group">
-					<button class="intro__btn-yellow btn">Apply now</button>
+					<a href="#contacts" class="intro__btn-yellow btn">Apply now</a>
 					<a href="#includes" class="intro__btn-transparent btn">Learn more <img src="images/dist/icon/arrow.svg" alt="arrow"></a>
 				</div>	
 			</div>
 			<div class="intro__img">
-				<img src="images/dist/intro/info.png" alt="info">
+				<!-- <img src="images/dist/intro/info.png" alt="info"> -->
 			</div>
 		</div>
 	</div>
@@ -26,7 +25,7 @@
 	<div class="container">
 		<div class="info__content">
 			<div class="info__row">
-				<h2 class="info__title">CoinTelegraph<br>
+				<h2 class="info__title">Cointelegraph<br>
 					Springboard <span class="info__title-yellow">includes</span></h2>
 					<div class="info__item info__item-tablet">
 						<div class="info__item-img">
@@ -100,88 +99,65 @@
 </section>
 
 
-<section class="contact">
+<section class="contact" id="contacts">
 	<div class="container">
 		<div class="contact__content">
 			<div class="contact__img">
+				<h3 class="contact__title">Tell us about<br> your project</h3>
 				<img src="images/dist/contacts/rupor.svg" alt="ruper">
 			</div>
 			<div class="contact__info">
-				<span class="contact__label">Contact us</span>
-				<h3 class="contact__title">Spend money <br>
-					on development, <br>
-					not marketing</h3>
-				<a href="#" class="contact__btn btn">Get started</a>
+				<form method="POST" class="call__form" id="CallBack">
+					<div class="call__block">
+						<h3 class="call__title">Tell us about<br> your project</h3>
+						<input class="call__name" name="name" type="text" placeholder="Your name *" required> 
+						<input class="call__email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$" name="email" type="email" placeholder="E-mail *" required> 
+						<input class="call__website" name="website" type="text" placeholder="Website" > 
+						<input class="call__telegram" name="telegram" type="text" placeholder="Telegram" > 
+						<textarea class="call__about" name="about" cols="30" rows="5" placeholder="About project"></textarea>
+						<!-- <input class="call__about" rows="3" name="about" type="text" placeholder="About project" required>  -->
+						<div class="g-recaptcha" data-sitekey="6LcHjgwdAAAAAIVnhh-A96JCkTwaCR4cLyoKiR3G" data-callback="chekRecapcha"></div>
+						<input type="submit" id="sendCallBack" value="Apply now" class="call__btn" disabled>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 </section>
 
+<script type="text/javascript">
+	let inputName = document.querySelector('.call__name');
+	let inputEmail = document.querySelector('.call__email');
+	let callBtn = document.querySelector('.call__btn');
+	let flag;
+
+	inputName.addEventListener('input', () => {
+		chekInputs()
+	})
+	inputEmail.addEventListener('input', () => {
+		let data = inputEmail.value
+		let re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/;
+		flag = re.test(data)
+		chekInputs()
+		
+		
+	})
+
+	function chekRecapcha() {
+		chekInputs()
+	}
 
 
-<section class="bg"></section>
-
-<section class="call">
-	<div class="call__text">
-		<h3 class="call__title">Contact us</h3>
-		<span class="call__subtitle">We will contact you shortly</span>
-		<img src="images/dist/icon/cross.svg" class="call__cross call__cross-1" alt="cross">
-		<img src="images/dist/icon/cross-mobile.svg" class="call__cross call__cross-2" alt="cross">
-	</div>
-	<div class="call__info">
-		<form method="POST" class="call__form" id="CallBack">
-			<div class="call__block">
-				<input class="call__name" name="name" type="text" placeholder="Your name (necessarily)" required> 
-				<input class="call__email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$" name="email" type="email" placeholder="E-mail (necessarily)" required> 
-				<input class="call__website" name="website" type="text" placeholder="Website (not necessarily)" > 
-				<input class="call__telegram" name="telegram" type="text" placeholder="Telegram (not necessarily)" > 
-				<textarea class="call__about" name="about" cols="30" rows="5" placeholder="About project (not necessarily)"></textarea>
-				<!-- <input class="call__about" rows="3" name="about" type="text" placeholder="About project" required>  -->
-				<div class="g-recaptcha" data-sitekey="6LcHjgwdAAAAAIVnhh-A96JCkTwaCR4cLyoKiR3G" data-callback="chekRecapcha"></div>
-			</div>
-			<input type="submit" id="sendCallBack" value="Send message" class="call__btn" disabled>
-		</form>
-		<!-- <div class="call__success">
-			<span class="call__info">
-				Ваша заявка получена!
-			</span>
-			<span class="call__text">
-				Мы свяжемся с вами в ближайшее время
-			</span>
-		</div> -->
-		<script type="text/javascript">
-		let inputName = document.querySelector('.call__name');
-		let inputEmail = document.querySelector('.call__email');
-		let callBtn = document.querySelector('.call__btn');
-		let flag;
-
-		inputName.addEventListener('input', () => {
-			chekInputs()
-		})
-		inputEmail.addEventListener('input', () => {
-			let data = inputEmail.value
-			let re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/;
-			flag = re.test(data)
-			chekInputs()
-			
-			
-		})
-
-		function chekRecapcha() {
-			chekInputs()
+	function chekInputs() {
+		if ((grecaptcha.getResponse()).length !== 0 & (inputName.value).length !== 0 & flag) {
+			callBtn.removeAttribute('disabled')
+		} else {
+			callBtn.setAttribute('disabled', 'disabled')
 		}
+	}
 
+	</script>
 
-		function chekInputs() {
-			if ((grecaptcha.getResponse()).length !== 0 & (inputName.value).length !== 0 & flag) {
-				callBtn.removeAttribute('disabled')
-			} else {
-				callBtn.setAttribute('disabled', 'disabled')
-			}
-		}
-
-		</script>
-	</div>
 </section>
 
 <!--#include virtual="/parts/footer.html" -->

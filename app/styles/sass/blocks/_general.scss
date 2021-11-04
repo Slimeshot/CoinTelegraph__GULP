@@ -1,5 +1,8 @@
 // GENERAL PROJECT STYLES
 
+.password.active {
+    visibility: hidden;
+}
 .container {
     max-width: 1440px;
     width: 100%;

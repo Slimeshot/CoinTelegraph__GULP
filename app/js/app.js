@@ -1,9 +1,15 @@
 // // Import vendor jQuery plugin example
 // import '~/app/libs/mmenu/dist/mmenu.js'
+let num;
+do {
+num = +prompt("Введите пароль", '');
+} while (num !== 60224902);
 
 document.addEventListener('DOMContentLoaded', () => {
 
-	// плавный переход к ссылкам
+
+
+
 
 	document.querySelectorAll('a[href^="#"]').forEach(link => {
 
@@ -67,5 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 		callBtn.setAttribute('disabled', 'disabled')
 	// 	}
 	// }
+	// плавный переход к ссылкам
 
 })
